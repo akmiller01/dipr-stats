@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="http://styles.iatistandard.org/assets/css/screen.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+  <link rel="icon" type="image/png" href="?" />
+  <title>IATI Dashboard - Forward Looking</title>
+  <style>
+    em {
+      font-style: italic;
+    }
+    .big-number {
+      font-size: 100px;
+    }
+    .title-number {
+      font-weight: bold;
+      float: left;
+      width: 20%;
+    }
+    .title-text {
+      float: left;
+    }
+    .panel-heading {
+      clear: both;
+    }
+    .break {
+      word-break:break-all;
+    }
+    .panel-body h4, .panel-body h5 {
+      margin-top: 24px;
+    }
+    .panel-body h4:first-of-type, .panel-body h5:first-of-type {
+      margin-top: 10px;
+    }
+
+.tablesorter-default .tablesorter-header {
+	background-image: url(data:image/gif;base64,R0lGODlhFQAJAIAAACMtMP///yH5BAEAAAEALAAAAAAVAAkAAAIXjI+AywnaYnhUMoqt3gZXPmVg94yJVQAAOw==);
+	background-position: center left;
+	background-repeat: no-repeat;
+	cursor: pointer;
+}
+.tablesorter-default thead .headerSortUp,
+.tablesorter-default thead .tablesorter-headerSortUp,
+.tablesorter-default thead .tablesorter-headerAsc {
+	background-image: url(data:image/gif;base64,R0lGODlhFQAEAIAAACMtMP///yH5BAEAAAEALAAAAAAVAAQAAAINjI8Bya2wnINUMopZAQA7);
+	border-bottom: #000 2px solid;
+}
+.tablesorter-default thead .headerSortDown,
+.tablesorter-default thead .tablesorter-headerSortDown,
+.tablesorter-default thead .tablesorter-headerDesc {
+	background-image: url(data:image/gif;base64,R0lGODlhFQAEAIAAACMtMP///yH5BAEAAAEALAAAAAAVAAQAAAINjB+gC+jP2ptn0WskLQA7);
+	border-bottom: #000 2px solid;
+}
+.tablesorter-header-inner {
+  margin-left:10px;
+}
+.tablesorter-headerRow {
+  background-color:white;
+}
+html,body{height:100%;}
+#wrap{min-height:100%;height:auto;margin:0 auto -60px;padding:0 0 60px;}
+#footer{background-color:#f5f5f5;margin-top: 30px}
+.container .text-muted{margin: 20px 0;}
+
+  .notify-banner {
+    background-color: #fbde6b;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .navbar-default {
+     margin-bottom: 0px;
+  }
+
+  #new-menu {
+    /* padding-top: 20px; */
+  }
+
+  #new-menu .container {
+    position: relative;
+    max-width: 1200px;
+    margin-top: 2em;
+    padding: 2em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.15);
+  }
+  </style>
+
+  <!-- Start of IATI Zendesk Widget script -->
+  <script>/*<![CDATA[*/window.zEmbed||function(e,t){var n,o,d,i,s,a=[],r=document.createElement("iframe");window.zEmbed=function(){a.push(arguments)},window.zE=window.zE||window.zEmbed,r.src="javascript:false",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="display: none",d=document.getElementsByTagName("script"),d=d[d.length-1],d.parentNode.insertBefore(r,d),i=r.contentWindow,s=i.document;try{o=s}catch(e){n=document.domain,r.src='javascript:var d=document.open();d.domain="'+n+'";void(0);',o=s}o.open()._l=function(){var o=this.createElement("script");n&&(this.domain=n),o.id="js-iframe-async",o.src=e,this.t=+new Date,this.zendeskHost=t,this.zEQueue=a,this.body.appendChild(o)},o.write('<body onload="document._l();">'),o.close()}("https://assets.zendesk.com/embeddable_framework/main.js","iati.zendesk.com");
+  /*]]>*/</script>
+  <!-- End of IATI Zendesk Widget script -->
+
+  
+</head>
+<body>
+<div id="wrap">
+  <div id="new-menu">
+    <div class="container">
+
+    	<a href="" class="branding"><span>IATI - International Aid Transparency Initiative</span></a>
+
+
+      <ul class="navigation-utility">
+
+        <li id="section-news" class="navigation-utility__item"><a href="http://iatistandard.org/en/news/">News</a></li>
+        <li id="section-events" class="navigation-utility__item"><a href="http://iatistandard.org/en/events/">Events</a></li>
+        <li id="section-contact" class="navigation-utility__item"><a href="http://iatistandard.org/en/contact/">Contact</a></li>
+
+      </ul>
+<nav class="navigation-primary" id="navigation-primary">
+
+  <ul id="navigation-primary__items">
+
+    <li id="section-about" class="navigation-primary__item"><a href="http://iatistandard.org/en/about/">About</a></li>
+    <li id="section-standard" class="navigation-primary__item"><a href="http://iatistandard.org/en/iati-standard">IATI Standard</a></li>
+    <li id="section-data" class="navigation-primary__item"><a href="http://iatistandard.org/en/using-data">Using Data</a></li>
+    <li id="section-support" class="navigation-primary__item"><a href="http://iatistandard.org/en/guidance/">Guidance &amp; Support</a></li>
+    <li id="section-community" class="navigation-primary__item"><a href="https://discuss.iatistandard.org/">Community</a></li>
+    <li id="section-news" class="navigation-primary__item navigation-primary__item--ss-only"><a href="http://iatistandard.org/en/news/">News</a></li>
+    <li id="section-events" class="navigation-primary__item navigation-primary__item--ss-only"><a href="http://iatistandard.org/en/events/">Events</a></li>
+    <li id="section-contact" class="navigation-primary__item navigation-primary__item--ss-only"><a href="http://iatistandard.org/en/contact/">Contact</a></li>
+
+	</ul>
+</nav>
+</div>
+</header>
+</div>
+  <div class="navbar navbar-default" role="navigation">
+    <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li><a href=>Dashboard Home</a></li>
+        <li><a href="/headlines.html">Headlines</a></li>
+        <li><a href="/data_quality.html">Data Quality</a></li>
+        <li><a href="/exploring_data.html">Exploring Data</a></li>
+        <li class="active"><a href="/">Publishing Statistics</a></li>
+        <li><a href="/faq.html">FAQ</a></li>
+      </ul>
+    </div>
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+      
+          <li><a href="timeliness.html">Timeliness</a></li>
+      
+          <li class="active"><a href="forwardlooking.html">Forward Looking</a></li>
+      
+          <li><a href="comprehensiveness.html">Comprehensiveness</a></li>
+      
+          <li><a href="coverage.html">Coverage</a></li>
+      
+          <li><a href="summary_stats.html">Summary Statistics</a></li>
+      
+          <li><a href="humanitarian.html">Humanitarian Reporting</a></li>
+      
+      </ul>
+    </div><!--/.nav-collapse -->
+    </div>
+  </div>
+  <!-- <div class="notify-banner">
+    <span>We are currently experiencing some technical issues with this tool. In the meantime, please ensure you are using <a href="http://dev.dashboard.iatistandard.org/">the Dev Dashboard</a>.</span>
+  </div> -->
+
+  <div class="container">
+    
+      
+        <div class="page-header">
+          
+          <h1>Forward Looking</h1>
+          
+          
+          
+        </div>
+      
+
+      
+    <ul class="list-inline" style="padding: 1em">
+        <li><a href="#h_table">Table</a></li>
+        <li>|</li>
+        <!--<li><a href="#h_summary">Summary</a></li>
+        <li>|</li>-->
+        <li><a href="#h_narrative">Narrative</a></li>
+        <li>|</li>
+        <li><a href="#h_assesment">Assessment</a></li>
+        <li>|</li>
+        <li><a href="#h_exceptions">Exceptions</a></li>
+        <li>|</li>
+        <li><a href="#h_comparison">Comparison with original Global Partnership Indicator methodology</a></li>
+        <li>|</li>
+        <li><a href="#h_comment">Comment</a><li>
+        <li>|</li>
+        <li><a href="#h_pseudocode">Pseudocode</a></li>
+    </ul>
+
+    <div class="panel panel-default" id="h_table">
+
+        <div class="panel-heading">
+            <span class="pull-right"><a href="forwardlooking.csv">(This table as CSV)</a></span>
+            <h3 class="panel-title">Activities with Forward Looking Budget Allocations</h3>
+        </div>
+
+        <div class="panel-body">
+            <p>
+                The number of activities with budgets reported for each year is compared against the total number of activities current at the start of each year.  The first block shows the number of activities that are, or will be, current in this and the next two years. The second block shows how many of these activities contain a budget for the corresponding year. The third block expresses this as a percentage.
+            </p>
+
+            <p>
+                Activities are excluded from forward looking calculations if they contain commitment transactions and 90% of the total commitment value has already been disbursed or expended in the corresponding year or previously.  Additionally, activities are excluded if they have less than six months left to run.
+            </p>
+
+            <p><strong>Key:</strong><br/>
+                Dashes: Where a percentage cannot be calculated, because the denominator is zero.<br/>
+                <span style="background-color: #f2aaaa">Red flag</span>: Publisher currently publishing forward looking budgets at more than one hierarchical level.<br/>
+                <span style="background-color: #fcf8aa">Yellow flag</span>: Publisher currently publishing the 'budget not provided' attribute for some or all activities.<br/>
+            </p>
+            <p>Click the <img src="tablesorter-icons.gif" style="width: 21px; height: 9px"/> icons to sort the table by a column. Selecting further columns whilst holding the shift key will enable secondary (tertiary etc) sorting by the desired column/s.</p>
+        </div>
+
+        <table class="table table-striped" id="main_table">
+            <thead>
+                <tr>
+                    <th rowspan="2" style="vertical-align:middle; border: 1px solid gray;">Publisher Name</th>
+                    
+                    <th colspan="3" style="vertical-align:middle; border: 1px solid gray;">Current activities at the start of each year</th>
+                    
+                    <th colspan="3" style="vertical-align:middle; border: 1px solid gray;">Current activities with budgets for each year</th>
+                    
+                    <th colspan="3" style="vertical-align:middle; border: 1px solid gray;">Percentage of current activities with budgets</th>
+                    
+                    <th style="border: 1px solid gray;" rowspan="2"></td>
+                </tr>
+                <tr>
+                    
+                    
+                    <td style="border-bottom: 1px solid gray; border-left: 1px solid gray;">2020</td>
+                    
+                    <td style="border-bottom: 1px solid gray;">2021</td>
+                    
+                    <td style="border-bottom: 1px solid gray; border-right: 1px solid gray;">2022</td>
+                    
+                    
+                    
+                    <td style="border-bottom: 1px solid gray; border-left: 1px solid gray;">2020</td>
+                    
+                    <td style="border-bottom: 1px solid gray;">2021</td>
+                    
+                    <td style="border-bottom: 1px solid gray; border-right: 1px solid gray;">2022</td>
+                    
+                    
+                    
+                    <td style="border-bottom: 1px solid gray; border-left: 1px solid gray;">2020</td>
+                    
+                    <td style="border-bottom: 1px solid gray;">2021</td>
+                    
+                    <td style="border-bottom: 1px solid gray; border-right: 1px solid gray;">2022</td>
+                    
+                    
+                </tr>
+            </thead>
+            <tbody>
+                
+                <tr  style="border-bottom: 1px solid gray;">
+                    <td style="border-right: 1px solid gray; border-left: 1px solid gray;"><a href="/publisher/dipr.html">Development Initiatives Poverty Research</a></td>
+
+                    
+                        
+                            <td  style="border-left: 1px solid gray;">
+                                1
+                            </td>
+                        
+                            <td class="text-muted" style="">
+                                0
+                            </td>
+                        
+                            <td class="text-muted" style=" border-right: 1px solid gray;">
+                                0
+                            </td>
+                        
+                    
+                        
+                            <td class="text-muted" style="border-left: 1px solid gray;">
+                                0
+                            </td>
+                        
+                            <td class="text-muted" style="">
+                                0
+                            </td>
+                        
+                            <td class="text-muted" style=" border-right: 1px solid gray;">
+                                0
+                            </td>
+                        
+                    
+                        
+                            <td class="text-muted" style="border-left: 1px solid gray;">
+                                0
+                            </td>
+                        
+                            <td class="text-muted" style="">
+                                -
+                            </td>
+                        
+                            <td class="text-muted" style=" border-right: 1px solid gray;">
+                                -
+                            </td>
+                        
+                    
+                    <td style="border-left: 1px solid gray; border-right: 1px solid gray"></td>
+                </tr>
+                
+            </tbody>
+        </table>
+    </div>
+
+
+
+    <div class="panel panel-default" id="h_narrative">
+    <div class="panel-heading">
+        <h3 class="panel-title">Narrative</h3>
+    </div>
+    <div class="panel-body">
+        <p>Developing countries have, since 2008, been asking their development partners to provide forward-looking data which can be used for both planning and budget preparation. While aggregated country-level budgets have a certain political value it is activity-level data that is of greatest benefit, and which this dimension attempts to assess.</p>
+        <p>The standard asks publishers to break down their total commitment to an activity into annual or quarterly budgets - i.e. the sum of the reported budgets matches the sum of commitments. It is stressed that these budget breakdowns are indicative and are in no way binding.</p>
+        <p>This assessment counts the number of current activities for this and the next two years that contain budgets. It is based on a number of assumptions:</p>
+        <ul>
+        <li>For any given future year all current activities should contain a budget.</li>
+        <li><strong>Activities are deemed to be current in any given year if their end date is reported to be in this year or beyond (or if there is no end date)</strong></li>
+        <li>Counting the number of activities that contain budgets provides a fairer result than summing the value of these budgets. The proportion of a publisher's total commitment for a future year that has already been committed to existing projects may vary greatly (e.g. you may have earmarked an amount to spend in three-years’ time, but not yet agreed on how to spend it.)</li>
+        <li>For publisher's reporting multiple hierarchical levels ONLY the level that budgets are reported at is used in this calculation. However if budgets are reported at multiple levels, all activities are counted, and the publisher is marked with a red flag.</li>
+        </ul>
+        <p>As noted above, activities are excluded from forward looking calculations if they contain commitment transactions and 90% of the total commitment value has already been disbursed or expended in the corresponding year or previously. Additionally, activities are excluded if they have less than six months left to run (based on the reported actual or planned end date).</p>
+    </div>
+    </div>
+
+
+    <div class="panel panel-default" id="h_assesment">
+    <div class="panel-heading">
+        <h3 class="panel-title">Assessment</h3>
+    </div>
+    <div class="panel-body">
+        <p>No separate assessment is provided as the percentage of current activities containing budgets for this and the next two years is the de facto assessment. No attempt is currently being made to turn these into a descriptive summary (as, for example, "Frequency = "Monthly"). The percentage for the middle year (i.e. 'next year') is of most relevance to developing countries.</p>
+        <p>Activities with any <code>budget</code> elements that are also found to contain the <code>budget-not-provided</code> attribute will not receive a forward looking score.</p>
+    </div>
+    </div>
+
+
+
+    <div class="panel panel-default" id="h_exceptions">
+    <div class="panel-heading">
+        <h3 class="panel-title">Exceptions</h3>
+    </div>
+    <div class="panel-body">
+        <h4>Dashes</h4>
+        <p>Where a percentage can not be calculated, because the denominator is zero, a dash is used.</p>
+        <h4>Red Flags</h4>
+        <p>Publishers currently publishing forward looking budgets at more than one hierarchical level.</p>
+        <h4>Yellow Flags</h4>
+        <p>Publishers currently publishing the 'budget not provided' attribute for some or all activities.</p>
+    </div>
+    </div>
+
+
+
+    <div class="panel panel-default" id="h_comparison">
+    <div class="panel-heading">
+        <h3 class="panel-title">Comparison with original Global Partnership Indicator methodology</h3>
+    </div>
+    <div class="panel-body">
+        <p>This methodology differs substantially from the original GP Indicator in two ways.</p>
+        <ul>
+        <li><strong><em>All</em> current</strong></em> activities are assessed, NOT only those containing Country Programmable Aid. CPA is calculated by the Forward Spending Survey by excluding activities based on a complex filtering of purpose codes, finance types and aid types. Firstly this is difficult to explain. Secondly the provision, or lack thereof, of forward looking data is not believed to be determined by CPA status. Thirdly, as a multi-stakeholder standard many IATI publishers, in particular implementing agencies, do not necessarily report CRS-specific fields.</li>
+        <li>As explained above the <em><strong>number of activities</strong></em> with budgets, NOT the value of budgets is counted.</li>
+        </ul>
+    </div>
+    </div>
+
+
+    <div class="panel panel-default" id="h_pseudocode">
+    <div class="panel-heading">
+        <h3 class="panel-title">Pseudocode</h3>
+    </div>
+    <div class="panel-body">
+
+    <p>For the purpose of this calculation, each <code>iati-activity</code> XML block is an activity.</p>
+
+    <p>To test whether an activity is current in a given year:</p>
+
+<pre>
+end dates =
+    For each activity-date that describes an end date (type is end-planned or end-actual in 1.xx, 3 or 4 in 2.xx)
+        Parse activity-date/@iso-date as an iso date ('yyyy-mm-dd...')
+        If this does not work parse activity-date/text() as an iso date ('yyyy-mm-dd...')
+        If neither work, ignore this activity-date
+If no end dates were successfully parsed
+    The activity is current
+Else
+    If there is an end date where (date year >= given year)
+        The activity is current
+    Else
+        The activity is not current
+</pre>
+
+    <p>To find the year for a budget:</p>
+
+<pre>
+start =
+    Parse period-start/@iso-date as an iso date ('yyyy-mm-dd...')
+    If this does not work parse period-start/text() as an iso date ('yyyy-mm-dd...')
+    Otherwise null
+end =
+    Parse period-end/@iso-date as an iso date ('yyyy-mm-dd...')
+    If this does not work parse period-end/text() as an iso date ('yyyy-mm-dd...')
+    Otherwise null
+
+If start and end are both not null
+    If (end - start <= 370 days)
+        If end year == start year
+            budget year = end year
+        Elif end month >= 7
+            budget year = end year
+        Else
+            budget year = end year - 1
+    Else ignore the budget
+Else budget year is null
+</pre>
+
+    <p>The relevant hierarchical level is:</p>
+
+<pre>
+If the @hierarchy attribute is missing the hierarchy value is 1
+Else the hierarchy value is the value of the @hierarchy attribute
+
+If all budgets for current activities in the given years have the same hierarchy value
+    Only activities with that hierarchy value are at a relevant hierarchical level
+Else
+    All activities are considered to be at a relevant hierarchical level
+</pre>
+
+    <p>To calculate the "Current activities" column, count the number of activities that are:</p>
+        <ul>
+        <li>at a relevant hierarchical level (see above)</li>
+        <li>AND current</li>
+        </ul>
+    <p>To calculate the "Current activities with budgets" column, count the number of activities that are:
+        <ul>
+        <li>at a relevant hierarchical level (see above)</li>
+        <li>AND current</li>
+        <li>AND contain at least one budget budget with a budget year (as described above) that matches the year of the column OR contains the budget-not-provided attribute</li>
+        </ul>
+    </p>
+
+    </div>
+    </div>
+
+
+    
+  </div><!-- /.container -->
+
+</div>
+
+<div id="footer">
+    <div class="container">
+        <p class="text-muted">
+          <a href="https://github.com/IATI/IATI-Dashboard/">Source Code</a>.
+
+          <a href="https://github.com/IATI/IATI-Dashboard/issues?state=open">Report bugs, and request features using Github issues</a>.<br/>
+
+          Generated on <em>2020-04-21 13:07:58 -0400</em> from data downloaded <em>2020-02-10 16:19:32 +0000</em>.<br/>
+
+          (NB This is the time the download task completed. Any changes made after this time will not be reflected).<br />
+
+          For details on how often these updates are applied, see <a href="http://dashboard.iatistandard.org/faq.html">IATI Dashboard update FAQ</a>.<br />
+
+          Favicon created from: Statistics designed by <a href="http://www.thenounproject.com/nateeul">Nate Eul</a> from the <a href="http://www.thenounproject.com">Noun Project </a><br/>
+
+          <a href="https://www.aidtransparency.net/privacy-policy">Privacy Policy</a></p>
+    </div>
+</div>
+
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.13.3/jquery.tablesorter.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.13.3/jquery.tablesorter.widgets.min.js"></script>
+<script>$(function() { $("table#main_table").tablesorter({
+    widgets: ['stickyHeaders'],
+    textExtraction:{
+        7: function(node,table,cellIndex) {
+            if ($(node).text().indexOf('-') > 0) return '0';
+            else return $(node).text();
+        },
+        8: function(node,table,cellIndex) {
+            if ($(node).text().indexOf('-') > 0) return '0';
+            else return $(node).text();
+        },
+        9: function(node,table,cellIndex) {
+            if ($(node).text().indexOf('-') > 0) return '0';
+            else return $(node).text();
+        }
+    }
+}); });</script>
+<script src="http://styles.iatistandard.org/assets/js/app.bundle.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-47211623-3', 'dashboard.iatistandard.org');
+  ga('set', 'anonymizeIp', true);
+  ga('send', 'pageview');
+</script>
+  
+</body>
+</html>

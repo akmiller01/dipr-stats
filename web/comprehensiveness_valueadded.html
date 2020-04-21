@@ -1,0 +1,678 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="http://styles.iatistandard.org/assets/css/screen.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+  <link rel="icon" type="image/png" href="?" />
+  <title>IATI Dashboard - Comprehensiveness</title>
+  <style>
+    em {
+      font-style: italic;
+    }
+    .big-number {
+      font-size: 100px;
+    }
+    .title-number {
+      font-weight: bold;
+      float: left;
+      width: 20%;
+    }
+    .title-text {
+      float: left;
+    }
+    .panel-heading {
+      clear: both;
+    }
+    .break {
+      word-break:break-all;
+    }
+    .panel-body h4, .panel-body h5 {
+      margin-top: 24px;
+    }
+    .panel-body h4:first-of-type, .panel-body h5:first-of-type {
+      margin-top: 10px;
+    }
+
+.tablesorter-default .tablesorter-header {
+	background-image: url(data:image/gif;base64,R0lGODlhFQAJAIAAACMtMP///yH5BAEAAAEALAAAAAAVAAkAAAIXjI+AywnaYnhUMoqt3gZXPmVg94yJVQAAOw==);
+	background-position: center left;
+	background-repeat: no-repeat;
+	cursor: pointer;
+}
+.tablesorter-default thead .headerSortUp,
+.tablesorter-default thead .tablesorter-headerSortUp,
+.tablesorter-default thead .tablesorter-headerAsc {
+	background-image: url(data:image/gif;base64,R0lGODlhFQAEAIAAACMtMP///yH5BAEAAAEALAAAAAAVAAQAAAINjI8Bya2wnINUMopZAQA7);
+	border-bottom: #000 2px solid;
+}
+.tablesorter-default thead .headerSortDown,
+.tablesorter-default thead .tablesorter-headerSortDown,
+.tablesorter-default thead .tablesorter-headerDesc {
+	background-image: url(data:image/gif;base64,R0lGODlhFQAEAIAAACMtMP///yH5BAEAAAEALAAAAAAVAAQAAAINjB+gC+jP2ptn0WskLQA7);
+	border-bottom: #000 2px solid;
+}
+.tablesorter-header-inner {
+  margin-left:10px;
+}
+.tablesorter-headerRow {
+  background-color:white;
+}
+html,body{height:100%;}
+#wrap{min-height:100%;height:auto;margin:0 auto -60px;padding:0 0 60px;}
+#footer{background-color:#f5f5f5;margin-top: 30px}
+.container .text-muted{margin: 20px 0;}
+
+  .notify-banner {
+    background-color: #fbde6b;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .navbar-default {
+     margin-bottom: 0px;
+  }
+
+  #new-menu {
+    /* padding-top: 20px; */
+  }
+
+  #new-menu .container {
+    position: relative;
+    max-width: 1200px;
+    margin-top: 2em;
+    padding: 2em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.15);
+  }
+  </style>
+
+  <!-- Start of IATI Zendesk Widget script -->
+  <script>/*<![CDATA[*/window.zEmbed||function(e,t){var n,o,d,i,s,a=[],r=document.createElement("iframe");window.zEmbed=function(){a.push(arguments)},window.zE=window.zE||window.zEmbed,r.src="javascript:false",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="display: none",d=document.getElementsByTagName("script"),d=d[d.length-1],d.parentNode.insertBefore(r,d),i=r.contentWindow,s=i.document;try{o=s}catch(e){n=document.domain,r.src='javascript:var d=document.open();d.domain="'+n+'";void(0);',o=s}o.open()._l=function(){var o=this.createElement("script");n&&(this.domain=n),o.id="js-iframe-async",o.src=e,this.t=+new Date,this.zendeskHost=t,this.zEQueue=a,this.body.appendChild(o)},o.write('<body onload="document._l();">'),o.close()}("https://assets.zendesk.com/embeddable_framework/main.js","iati.zendesk.com");
+  /*]]>*/</script>
+  <!-- End of IATI Zendesk Widget script -->
+
+  
+</head>
+<body>
+<div id="wrap">
+  <div id="new-menu">
+    <div class="container">
+
+    	<a href="" class="branding"><span>IATI - International Aid Transparency Initiative</span></a>
+
+
+      <ul class="navigation-utility">
+
+        <li id="section-news" class="navigation-utility__item"><a href="http://iatistandard.org/en/news/">News</a></li>
+        <li id="section-events" class="navigation-utility__item"><a href="http://iatistandard.org/en/events/">Events</a></li>
+        <li id="section-contact" class="navigation-utility__item"><a href="http://iatistandard.org/en/contact/">Contact</a></li>
+
+      </ul>
+<nav class="navigation-primary" id="navigation-primary">
+
+  <ul id="navigation-primary__items">
+
+    <li id="section-about" class="navigation-primary__item"><a href="http://iatistandard.org/en/about/">About</a></li>
+    <li id="section-standard" class="navigation-primary__item"><a href="http://iatistandard.org/en/iati-standard">IATI Standard</a></li>
+    <li id="section-data" class="navigation-primary__item"><a href="http://iatistandard.org/en/using-data">Using Data</a></li>
+    <li id="section-support" class="navigation-primary__item"><a href="http://iatistandard.org/en/guidance/">Guidance &amp; Support</a></li>
+    <li id="section-community" class="navigation-primary__item"><a href="https://discuss.iatistandard.org/">Community</a></li>
+    <li id="section-news" class="navigation-primary__item navigation-primary__item--ss-only"><a href="http://iatistandard.org/en/news/">News</a></li>
+    <li id="section-events" class="navigation-primary__item navigation-primary__item--ss-only"><a href="http://iatistandard.org/en/events/">Events</a></li>
+    <li id="section-contact" class="navigation-primary__item navigation-primary__item--ss-only"><a href="http://iatistandard.org/en/contact/">Contact</a></li>
+
+	</ul>
+</nav>
+</div>
+</header>
+</div>
+  <div class="navbar navbar-default" role="navigation">
+    <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li><a href=>Dashboard Home</a></li>
+        <li><a href="/headlines.html">Headlines</a></li>
+        <li><a href="/data_quality.html">Data Quality</a></li>
+        <li><a href="/exploring_data.html">Exploring Data</a></li>
+        <li class="active"><a href="/">Publishing Statistics</a></li>
+        <li><a href="/faq.html">FAQ</a></li>
+      </ul>
+    </div>
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+      
+          <li><a href="timeliness.html">Timeliness</a></li>
+      
+          <li><a href="forwardlooking.html">Forward Looking</a></li>
+      
+          <li class="active"><a href="comprehensiveness.html">Comprehensiveness</a></li>
+      
+          <li><a href="coverage.html">Coverage</a></li>
+      
+          <li><a href="summary_stats.html">Summary Statistics</a></li>
+      
+          <li><a href="humanitarian.html">Humanitarian Reporting</a></li>
+      
+      </ul>
+    </div><!--/.nav-collapse -->
+    </div>
+  </div>
+  <!-- <div class="notify-banner">
+    <span>We are currently experiencing some technical issues with this tool. In the meantime, please ensure you are using <a href="http://dev.dashboard.iatistandard.org/">the Dev Dashboard</a>.</span>
+  </div> -->
+
+  <div class="container">
+    
+
+    
+        
+        <div class="page-header">
+          
+          <h1>Comprehensiveness</h1>
+          
+          
+          
+        </div>
+      
+    
+
+    <ul class="nav nav-tabs" role="tablist">
+      <li><a href="comprehensiveness.html">Summary</a></li>
+      <li><a href="comprehensiveness_core.html">Core</a></li>
+      <li><a href="comprehensiveness_financials.html">Financials</a></li>
+      <li class="active"><a href="comprehensiveness_valueadded.html">Value added</a></li>
+    </ul>
+
+    <ul class="list-inline" style="padding: 1em">
+        <li><a href="#h_table">Table</a></li>
+        <li>|</li>
+        <li><a href="#h_narrative">Narrative</a></li>
+        <li>|</li>
+        <li><a href="#h_assessment">Assessment</a></li>
+        <li>|</li>
+        <li><a href="#h_exceptions">Exceptions</a></li>
+        <li>|</li>
+        <li><a href="#h_comparison">Comparison with original Global Partnership Indicator methodology</a></li>
+        <li>|</li>
+        <li><a href="#h_comment">Comment</a></li>
+        <li>|</li>
+        <li><a href="#h_pseudocode">Pseudocode</a></li>
+    </ul>
+
+    
+    <div class="panel panel-default" id="h_table">
+    <div class="panel-heading">
+        <span class="pull-right"><a href="comprehensiveness_valueadded.csv">(This table as CSV)</a></span>
+        <h3 class="panel-title">
+Table of Value-Added values
+</h3>
+    </div>
+
+    
+    <div class="panel-body">
+        
+	<p>This table attempts to capture the breadth, richness and usefulness of high quality IATI data. The value added elements included in this table are: Contacts, Location Details, Geographic Coordinates, DAC Sectors, Capital Spend, Activity Documents, Activity Website, Conditions Attached, and Result/Indicator.</p>
+
+	<p>This table shows the percentage of current activities where these value added elements are populated with valid data. (Values in parentheses indicate percentage of activities where elements are populated with any data.)</p>
+
+	<p><strong>Key:</strong><br/>
+        Dashes (all fields except recipient language): Where a publisher has published to IATI in the past but whose portfolio contains no current activities.<br/>
+        Dashes (recipient language field): Where a publisher has no current activites targetted at only one recipient country.
+    </p>
+
+        <p>Click the <img src="tablesorter-icons.gif" style="width: 21px; height: 9px"/> icons to sort the table by a column. Selecting further columns whilst holding the shift key will enable secondary (tertiary etc) sorting by the desired column/s.</p>
+    </div>
+    
+
+    <table class="table table-striped" id="main_table">
+        <thead>
+            <tr>
+                <th style="vertical-align:middle; border: 1px solid gray;">Publisher Name</th>
+                
+                <th style="vertical-align:middle; border: 1px solid gray;">Contacts</th>
+                
+                <th style="vertical-align:middle; border: 1px solid gray;">Location Details</th>
+                
+                <th style="vertical-align:middle; border: 1px solid gray;">Geographic Coordinates</th>
+                
+                <th style="vertical-align:middle; border: 1px solid gray;">DAC Sectors</th>
+                
+                <th style="vertical-align:middle; border: 1px solid gray;">Capital Spend</th>
+                
+                <th style="vertical-align:middle; border: 1px solid gray;">Activity Documents</th>
+                
+                <th style="vertical-align:middle; border: 1px solid gray;">Aid Type</th>
+                
+                <th style="vertical-align:middle; border: 1px solid gray;">Recipient Language</th>
+                
+                <th style="vertical-align:middle; border: 1px solid gray;">Result/ Indicator</th>
+                
+                <th style="vertical-align:middle; border: 1px solid gray;">Average</th>
+                
+                
+            </tr>
+        </thead>
+        <tbody>
+            
+            <tr  style="border-bottom: 1px solid gray;">
+                <td style="border-right: 1px solid gray; border-left: 1px solid gray;"><a href="/publisher/dipr.html">Development Initiatives Poverty Research</a></td>
+                
+                <td style="border-right: 1px solid gray; border-left: 1px solid gray;">
+                    100
+                    
+                    </td>
+                
+                <td style="border-right: 1px solid gray; border-left: 1px solid gray;">
+                    0
+                    
+                    </td>
+                
+                <td style="border-right: 1px solid gray; border-left: 1px solid gray;">
+                    0
+                    
+                    </td>
+                
+                <td style="border-right: 1px solid gray; border-left: 1px solid gray;">
+                    100
+                    
+                    </td>
+                
+                <td style="border-right: 1px solid gray; border-left: 1px solid gray;">
+                    0
+                    
+                    </td>
+                
+                <td style="border-right: 1px solid gray; border-left: 1px solid gray;">
+                    100
+                    
+                    </td>
+                
+                <td style="border-right: 1px solid gray; border-left: 1px solid gray;">
+                    50
+                    
+                    </td>
+                
+                <td style="border-right: 1px solid gray; border-left: 1px solid gray;">
+                    100
+                    
+                    </td>
+                
+                <td style="border-right: 1px solid gray; border-left: 1px solid gray;">
+                    50
+                    
+                    </td>
+                
+                <td style="border-right: 1px solid gray; border-left: 1px solid gray;">
+                    56
+                    
+                    </td>
+                
+                
+            </tr>
+            
+        </tbody>
+    </table>
+    </div>
+
+
+    
+    <div class="panel panel-default" id="h_narrative">
+        <div class="panel-heading">
+            <h3 class="panel-title">Narrative</h3>
+        </div>
+        <div class="panel-body">
+            
+	<h5>Contacts</h5>
+	<p>The percentage of all current activities that contain at least one contact email address.</p>
+
+	<h5>Location Details</h5>
+	<p>The percentage of all current activities that contain at least one location name, location description, administrative area, or coordinates.</p>
+
+	<h5>Geographic Coordinates</h5>
+	<p>The importance of geocoded data is the reason why coordinates are assessed in addition to basic location details. The percentage of all current activities that contain at least one set of geographic coordinates.</p>
+
+	<h5>DAC Sectors</h5>
+	<p>Sector is a mandatory element and is assessed in the Core component. While it is not mandatory for publishers to utilise OECD DAC Sector/Purpose codes it is highly recommended that they do so as these codes are in widespread use and allow for comparison across activities. The percentage of all current activities that contain at least 1 valid DAC-CRS purpose code.</p>
+
+	<h5>Capital Spend</h5>
+	<p>For sustainable planning it is useful for developing countries to know how project funding is split between capital and recurrent expenditure. The percentage of all current activities that contain a capital spend percentage. (N.B. that 0% is a valid entry.)</p>
+
+	<h5>Activity Documents</h5>
+	<p>The percentage of all current activities that contain at least 1 document link.</p>
+
+	<h5>Aid Type</h5>
+	<p>The percentage of all current activities that contain details of the type of aid being supplied. This can be done at activity level using <code>default-aid-type</code>, or at transaction level using <code>aid-type</code>.</p>
+
+	<h5>Recipient Language</h5>
+	<p>The percentage of activities targeted at only one <code>recipient-country</code> that contain <code>title</code> and <code>description</code> elements with at least one of the official languages spoken in that country.  These calculations are based on a <a href="https://github.com/IATI/IATI-Stats/blob/master/helpers/transparency_indicator/country_lang_map.csv">list of official languages within each country</a>.</p>
+
+	<h5>Result/Indicator</h5>
+	<p>The percentage of all current activities that contain at least one validly reported results indicator.</p>
+
+        </div>
+    </div>
+    
+
+
+    
+    <div class="panel panel-default" id="h_assessment">
+        <div class="panel-heading">
+            <h3 class="panel-title">Assessment</h3>
+        </div>
+        <div class="panel-body">
+            
+	<p>Only elements containing valid data are counted. Where applicable a total including invalid data is provided in parentheses.</p>
+
+        </div>
+    </div>
+    
+
+
+    
+    <div class="panel panel-default" id="h_exceptions">
+        <div class="panel-heading">
+            <h3 class="panel-title">Exceptions</h3>
+        </div>
+        <div class="panel-body">
+            
+	<p>Only current activities are checked. A current activity is one with an activity status of implementing, a planned end date beyond today, or no end date. Publisher rows containing dashes indicate that no current activities are published.</p>
+
+        </div>
+    </div>
+    
+
+
+    
+    <div class="panel panel-default" id="h_comparison">
+        <div class="panel-heading">
+            <h3 class="panel-title">Comparison with original Global Partnership Indicator methodology</h3>
+        </div>
+        <div class="panel-body">
+            
+            <p>These tests are more targeted than the original methodology which merely checked for the existence of all fields irrespective of their importance.</p>
+            
+        </div>
+    </div>
+    
+
+
+    <div class="panel panel-default" id="h_pseudocode">
+    <div class="panel-heading">
+        <h3 class="panel-title">Pseudocode</h3>
+    </div>
+    <div class="panel-body">
+
+    <p>For the purpose of this calculation, each <code>iati-activity</code> XML block is an activity.</p>
+
+    <p>To determine the lowest hierarchy:</p>
+<pre>
+Lowest hierarchy =
+   Largest integer reported in the hierarchy attribute of any iati-activity element
+</pre>
+
+    <p>To determine whether an activity is at the lowest hierarchical level:</p>
+
+<pre>
+If the @hierarchy attribute is missing
+    If the lowest hierarchical level is 1
+        Activity is at lowest hierarchical level
+    Else
+        Activity is NOT at lowest hierarchical level
+Else if the @hierarchy attribute == lowest hierarchy
+    Activity is at lowest hierarchical level
+Else
+    Activity is NOT at lowest hierarchical level
+</pre>
+
+    <p>To test whether an activity is current:</p>
+
+<pre>
+end dates =
+    For each activity-date of type end-planned or end-actual
+        Parse activity-date/@iso-date as an iso date ('yyyy-mm-dd...')
+        If this does not work parse activity-date/text() as an iso date ('yyyy-mm-dd...')
+        If neither work, ignore this activity-date
+
+If activity-status/@code exists
+    If activity-status/@code is 2 exists
+        The activity is current
+    Else
+        The activity is current
+Else
+    If end dates (see above) is empty
+        The activity is current
+    Else
+        If there is an end date where (date year >= current year)
+            The activity is current
+        Else
+            The activity is not current
+
+</pre>
+
+    <p>To determine whether we use an activity is relevant for a given comprehensiveness test.</p>
+
+<pre>
+start date =
+    If activity-date[@type="start-actual"] exists
+        Parse activity-date[@type="start-actual"]/@iso_date as an iso date ('yyyy-mm-dd...')
+            If this works, we have the start date, else null
+    Else If activity-date[@type="start-planned"] exists
+        Parse activity-date[@type="start-planned"]/@iso_date as an iso date ('yyyy-mm-dd...')
+            If this works, we have the start date, else null
+    Else
+        null
+
+If the activity is current
+    If we are on the financials tab
+        If hierarchy = lowest level
+            If the comprehensiveness test is 'Transaction - Disbursement or Expenditure'
+                If (start date isn't null
+                        and start date &lt; today
+                        and today - start date &lt; 365 days)
+                    Use activity
+                Else
+                    Ignore activity
+            Else If the comprehensiveness test is 'Transaction - Traceability'
+                If transaction/transaction-type[@code="IF"] exists (1.xx) or transaction/transaction-type[@code="1"] exists (2.xx)
+                    Use activity
+                Else
+                    Ignore activity
+            Else
+                Use activity
+        Else
+            Ignore activity
+    Else
+        Use activity
+Else
+    Ignore activity
+</pre>
+
+    
+    <table class="table">
+      
+      <tr>
+        <th>Tab</td>
+        <th>Comprehensiveness Test</td>
+        <th>Basic Methodology</td>
+        <th>Validation Methodology</td>
+      </tr>
+      
+
+      
+
+
+      
+
+
+      
+      <tr>
+        <td>Value added</td>
+        <td>Contacts</th>
+        <td>Activity must contain 1 contact-info/email element</th>
+        <td></th>
+      </tr>
+      <tr>
+        <td>Value added</td>
+        <td>Location Details</td>
+        <td>Activity must contain location/name OR location/description OR location/location-administrative) OR location/point/pos</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Value added</td>
+        <td>Geographic Coordinates</td>
+        <td>Activity must contain location/point/pos</td>
+        <td>location/point/pos must contain valid coordinates (two space separated decimals), and not be <code>0 0</code></td>
+      </tr>
+      <tr>
+        <td>Value added</td>
+        <td>DAC Sectors</td>
+        <td>At least 1 sector where @vocabulary is <code>DAC</code> or <code>DAC-3</code> (1.xx) or <code>1</code> or <code>2</code> (2.xx), must be reported at activity level, unless there is no @vocabulary attribute, in which case DAC/1 is assumed. If there is no DAC sector element at activity level it must be reported within all transactions contained within that activity.</td>
+        <td>Must be valid code on the <a href="http://iatistandard.org/codelists/Sector/">DAC</a> or <a href="http://iatistandard.org/codelists/SectorCategory/">DAC-3</a> lists as appropriate.</td>
+      </tr>
+      <tr>
+        <td>Value added</td>
+        <td>Capital Spend</td>
+        <td>Activity must contain the capital-spend/@percentage attribute</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Value added</td>
+        <td>Activity Documents</td>
+        <td>Activity must contain at least 1 document-link</td>
+        <td>Each document-link must contain valid document category code and a url that is a valid <code>xs:anyURI</code> and contains the string <code>//</code>.</td>
+      </tr>
+      <tr>
+        <td>Value added</td>
+        <td>Aid Type</td>
+        <td>Activity must contain either i) a value in <code>default-aid-type/@code</code> or ii) each transaction must contain a value in <code>transaction/aid-type/@code</code>.</td>
+        <td>Must be valid code on the <a href="http://iatistandard.org/codelists/AidType/">AidType codelist</a>.</td>
+      </tr>
+      <tr>
+        <td>Value added</td>
+        <td>Recipient Language</td>
+        <td>Only activities containing only one <code>recipient-country</code> are assessed. Activity must contain <code>title</code> and <code>description</code> elements containing at least <a href="https://github.com/IATI/IATI-Stats/blob/master/helpers/transparency_indicator/country_lang_map.csv">one of the official languages spoken</a> for the defined <code>recipient-country/@code</code>.</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Value added</td>
+        <td>Result/Indicator</td>
+        <td>Activity must contain the result/indicator element</td>
+        <td></td>
+      </tr>
+      
+
+    </table>
+    
+
+    <p>Where the Validation Methodology column is blank, no extra conditions are imposed over the basic methodology.</p>
+    <p>The main percentage is the percentage of relevant activities that satisfy the basic and validation methodology for the given Comprehensiveness Test and publisher.</p>
+    <p>The bracketed percentage is the percentage of relevant activities that satisfy the basic methodology for the given Comprehensiveness Test and publisher. This is only shown if it is different to the main percentage.</p>
+    </div>
+
+
+    </div>
+    
+
+  </div><!-- /.container -->
+
+</div>
+
+<div id="footer">
+    <div class="container">
+        <p class="text-muted">
+          <a href="https://github.com/IATI/IATI-Dashboard/">Source Code</a>.
+
+          <a href="https://github.com/IATI/IATI-Dashboard/issues?state=open">Report bugs, and request features using Github issues</a>.<br/>
+
+          Generated on <em>2020-04-21 13:07:58 -0400</em> from data downloaded <em>2020-02-10 16:19:32 +0000</em>.<br/>
+
+          (NB This is the time the download task completed. Any changes made after this time will not be reflected).<br />
+
+          For details on how often these updates are applied, see <a href="http://dashboard.iatistandard.org/faq.html">IATI Dashboard update FAQ</a>.<br />
+
+          Favicon created from: Statistics designed by <a href="http://www.thenounproject.com/nateeul">Nate Eul</a> from the <a href="http://www.thenounproject.com">Noun Project </a><br/>
+
+          <a href="https://www.aidtransparency.net/privacy-policy">Privacy Policy</a></p>
+    </div>
+</div>
+
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.13.3/jquery.tablesorter.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.13.3/jquery.tablesorter.widgets.min.js"></script>
+<script>$(function() { $("table#main_table").tablesorter({
+    widgets: ['stickyHeaders'],
+    textExtraction:{
+        1: function(node,table,cellIndex) {
+            if ($(node).text().indexOf('-') >= 0) return '0';
+            else return $(node).text();
+        },
+        2: function(node,table,cellIndex) {
+            if ($(node).text().indexOf('-') >= 0) return '0';
+            else return $(node).text();
+        },
+        3: function(node,table,cellIndex) {
+            if ($(node).text().indexOf('-') >= 0) return '0';
+            else return $(node).text();
+        },
+        4: function(node,table,cellIndex) {
+            if ($(node).text().indexOf('-') >= 0) return '0';
+            else return $(node).text();
+        },
+        5: function(node,table,cellIndex) {
+            if ($(node).text().indexOf('-') >= 0) return '0';
+            else return $(node).text();
+        },
+        6: function(node,table,cellIndex) {
+            if ($(node).text().indexOf('-') >= 0) return '0';
+            else return $(node).text();
+        },
+        7: function(node,table,cellIndex) {
+            if ($(node).text().indexOf('-') >= 0) return '0';
+            else return $(node).text();
+        },
+        8: function(node,table,cellIndex) {
+            if ($(node).text().indexOf('-') >= 0) return '0';
+            else return $(node).text();
+        },
+        9: function(node,table,cellIndex) {
+            if ($(node).text().indexOf('-') >= 0) return '0';
+            else return $(node).text();
+        },
+        10: function(node,table,cellIndex) {
+            if ($(node).text().indexOf('-') >= 0) return '0';
+            else return $(node).text();
+        },
+        11: function(node,table,cellIndex) {
+            if ($(node).text().indexOf('-') >= 0) return '0';
+            else return $(node).text();
+        }
+    }
+}
+); });</script>
+<script src="http://styles.iatistandard.org/assets/js/app.bundle.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-47211623-3', 'dashboard.iatistandard.org');
+  ga('set', 'anonymizeIp', true);
+  ga('send', 'pageview');
+</script>
+  
+</body>
+</html>
