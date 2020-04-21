@@ -1,2 +1,2 @@
 Publisher Name,Publisher Registry Id,Transaction - Commitment (with valid data),Transaction - Disbursement or Expenditure (with valid data),Transaction - Traceability (with valid data),Budget (with valid data),Average (with valid data),Transaction - Commitment (with any data),Transaction - Disbursement or Expenditure (with any data),Transaction - Traceability (with any data),Budget (with any data),Average (with any data),Using budget-not-provided
-Development Initiatives Poverty Research,dipr,0,100,100,100,75,0,100,100,100,75,-
+Development Initiatives Poverty Research,dipr,0,100,14,77,48,0,100,14,77,48,-
